@@ -44,7 +44,7 @@ void renderScene(void) {
 	
 	printOpenGLError();
 
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	glBindVertexArray(vertexArrayID);
 	glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -82,7 +82,8 @@ void InitGL()
 
 	//glDisable(GL_CULL_FACE);
 	//glCullFace(GL_FRONT);
-	//glEnable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
 	//glEnable(GL_TEXTURE_3D);
 	//glEnable(GL_TEXTURE_2D);
 
